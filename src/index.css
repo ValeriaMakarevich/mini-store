@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+
+@theme {
+  --font-sans: "Lato", system-ui, sans-serif;
+  --color-background: rgba(255, 255, 255, 1)
+  --color-foreground: rgba(39, 39, 39, 1);
+  --color-heading: rgba(39, 39, 39, 1);
+  --color-accent: rgba(114, 174, 200, 1);
+}
+
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    
+  }
+  body {
+    @apply antialiased bg-background ;
+  }
+  h1, h2, h3, h4{
+    @applay text-heading
+  }
+}
