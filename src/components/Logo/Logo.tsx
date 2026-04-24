@@ -1,3 +1,7 @@
 export default function Logo (){
-return <p className="">MiniStore.</p>
+return (
+  <a className="flex text-xl items-center">
+    MiniStore <span className="text-accent">.</span>
+  </a>
+);
 }
