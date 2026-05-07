@@ -1,3 +1,17 @@
-export default function Container({ children, className }) {
-  return <div className={`mx-60 ${className}`}>{children}</div>;
+import type { ReactNode } from "react";
+
+interface ContainerProps {
+  children: ReactNode;
+  className?: string;
+}
+
+// Container.tsx
+export default function Container({ children, className = "" }: ContainerProps) {
+  return (
+    <div
+      className={`mx-auto w-full max-w-360 px-4 sm:px-6 lg:px-10 xl:px-20 ${className}`}
+    >
+      {children}
+    </div>
+  );
 }

@@ -1,24 +1,44 @@
 @import "tailwindcss";
 
-
 @theme {
   --font-sans: "Lato", system-ui, sans-serif;
-  --color-background: rgba(255, 255, 255, 1)
+  --color-background: rgba(255, 255, 255, 1); 
   --color-foreground: rgba(39, 39, 39, 1);
   --color-heading: rgba(39, 39, 39, 1);
   --color-accent: rgba(114, 174, 200, 1);
 }
 
-
 @layer base {
-  html {
+  html, body {
     scroll-behavior: smooth;
-    
+    max-width: 100%;
+    overflow-x: hidden; 
+    -webkit-text-size-adjust: 100%; 
   }
+
   body {
-    @apply antialiased bg-background ;
+    @apply antialiased bg-background text-foreground;
   }
-  h1, h2, h3, h4{
-    @applay text-heading 
+
+  h1, h2, h3, h4 {
+    @apply text-heading; 
+  }
+
+  a, button{
+    @apply cursor-pointer;
+  }
+
+  a:hover, a:active { 
+    @apply text-accent;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }
